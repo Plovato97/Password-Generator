@@ -44,8 +44,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-var pwl = prompt("Choose the length of 8 - 128 characters")
-var specials = confirm("Do you want SPECIAL characters?")
+var pwl = prompt("Choose a length of 8 - 128 characters")
+var specials = confirm("Do you want SPECIAL characters?                                                          Chose Okay for YES and Cancel for NO")
 var uppercase = confirm("Do you want UPPERCASE characters?")
 var pwnumber = confirm("Do you want NUMBER characters?")
 
@@ -64,6 +64,15 @@ console.log(pwnumber);
     password = password.toString() + charPick.toString();
     console.log(password);
   }
+} else if(specials === true && uppercase === true && pwnumber === true) {
+  for(var i = 0; i < pwl; i++){
+
+    charPick = uNSymbols[Math.floor(Math.random() * uNSymbols.length)];
+    console.log(charPick);
+    password = password.toString() + charPick.toString();
+    console.log(password);
+  }
+
 } else if(specials === false && uppercase === true && pwnumber === false) {
   for(var i = 0; i < pwl; i++){
 
@@ -72,6 +81,7 @@ console.log(pwnumber);
     password = password.toString() + charPick.toString();
     console.log(password);
   }
+
 } else if(specials === true && uppercase === true && pwnumber === false) {
   for(var i = 0; i < pwl; i++){
 
@@ -80,14 +90,6 @@ console.log(pwnumber);
     password = password.toString() + charPick.toString();
     console.log(password);
   }
-// } else if(specials === true && uppercase === true && pwnumber === true) {
-//     for(var i = 0; i < pwl; i++){
-
-//       charPick = uNSymbols[Math.floor(Math.random() * uNSymbols.length)];
-//       console.log(charPick);
-//       password = password.toString() + charPick.toString();
-//       console.log(password);
-//     }
 } else if(specials === true && uppercase === false && pwnumber === true) {
   for(var i = 0; i < pwl; i++){
 
@@ -96,18 +98,29 @@ console.log(pwnumber);
     password = password.toString() + charPick.toString();
     console.log(password);
   }
-} else if(specials === true && uppercase === true && pwnumber === true) {
+
+} else if(specials === true && uppercase === false && pwnumber === false) {
   for(var i = 0; i < pwl; i++){
 
-    charPick = uNSymbols[Math.floor(Math.random() * uNSymbols.length)];
+    charPick = symbols[Math.floor(Math.random() * symbols.length)];
     console.log(charPick);
     password = password.toString() + charPick.toString();
     console.log(password);
   }
-} else if(specials === true && uppercase === true && pwnumber === true) {
+
+} else if(specials === false && uppercase === true && pwnumber === true) {
   for(var i = 0; i < pwl; i++){
 
-    charPick = uNSymbols[Math.floor(Math.random() * uNSymbols.length)];
+    charPick = uNumbers[Math.floor(Math.random() * uNumbers.length)];
+    console.log(charPick);
+    password = password.toString() + charPick.toString();
+    console.log(password);
+  }
+
+} else if(specials === false && uppercase === false && pwnumber === true) {
+  for(var i = 0; i < pwl; i++){
+
+    charPick = numbers[Math.floor(Math.random() * numbers.length)];
     console.log(charPick);
     password = password.toString() + charPick.toString();
     console.log(password);
